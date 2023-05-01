@@ -1,67 +1,61 @@
-body{
-  font-family: 'Gilroy', sans-serif;
+body {
+  font-family: "Gilroy", sans-serif;
   font-size: 14px;
   font-weight: 400;
   color: #fff;
 }
 
-.wrapper{
+.wrapper {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
 }
 
-.container{
+.container {
   max-width: 1320px;
   margin: 0 auto;
   padding: 0 10px;
 }
 
-header{
+.header {
   border-bottom: 1px solid #FFFFFF;
   background-color: gray;
 }
-
-.header__inner{
-  display: flex;
-  padding: 30px 0 30px ;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.menu__list{
-  display: flex;
-  gap: 40px;
-  align-items: center;
-  height: 100%;
-}
-
-.social{
-  display: flex;
-  gap: 20px;
-}
-
-.main{
-  flex-grow: 1;
-}
-
-.footer{
-  background-color: #F7ECE1;
-  color: #333;
-}
-
-.footer__inner{
+.header__inner {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 30px 0 30px;
 }
-
-.footer__text{
-  opacity: 0.3;
-}
-
-.footer__list{
+.header__inner .menu__list {
   display: flex;
   gap: 40px;
+  align-items: center;
+  height: 100%;
 }
+.header .social {
+  display: flex;
+  gap: 20px;
+}
+
+.main {
+  flex-grow: 1;
+}
+
+.footer {
+  background-color: #F7ECE1;
+  color: #333;
+}
+.footer__inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px 0 30px;
+}
+.footer__text {
+  opacity: 0.3;
+}
+.footer__list {
+  display: flex;
+  gap: 40px;
+}/*# sourceMappingURL=style.css.map */

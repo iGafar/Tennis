@@ -1,0 +1,72 @@
+$primary-font: 14px;
+$secondary-font: 18px;
+
+@mixin flex-center {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+body{
+  font-family: 'Gilroy', sans-serif;
+  font-size: $primary-font;
+  font-weight: 400;
+  color: #fff;
+}
+
+.wrapper{
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.container{
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 0 10px;
+}
+
+.header{
+  border-bottom: 1px solid #FFFFFF;
+  background-color: gray;
+
+  &__inner {
+    @include flex-center();
+    padding: 30px 0 30px ;
+
+    .menu__list{
+      display: flex;
+      gap: 40px;
+      align-items: center;
+      height: 100%;
+    }
+  }
+
+  .social{
+    display: flex;
+    gap: 20px;
+  }  
+}
+
+.main{
+  flex-grow: 1;
+}
+
+.footer{
+  background-color: #F7ECE1;
+  color: #333;
+
+  &__inner {
+    @include flex-center();
+    padding: 30px 0 30px;
+  }
+
+  &__text {
+    opacity: 0.3;
+  }
+
+  &__list {
+    display: flex;
+    gap: 40px;
+  }
+}
