@@ -13,11 +13,29 @@ $back-color: #8D86C9;
   align-items: center;
 }
 
+@mixin style-h2{
+  font-weight: 700;
+  font-size: 36px;
+  line-height: $primary-line-height;
+}
+
+@mixin style-h3{
+  font-weight: 700;
+  font-size: 27px;
+  line-height: $primary-line-height;
+}
+
+@mixin style-h4{
+  font-weight: 600;
+  font-size: 21px;
+  line-height: $primary-line-height;
+}
+
 body{
   font-family: 'Gilroy', sans-serif;
   font-size: $primary-font;
   font-weight: 400;
-  color: #fff;
+  color: #E5E5E5;
 }
 
 .wrapper{
@@ -175,8 +193,12 @@ body{
     max-width: 416px;
     max-height: 500px;
     padding: 25px 20px 65px;
-    border: 1px solid #F7ECE1;;
+    border: 1px solid #F7ECE1;
+    transition: all 300ms linear;
 
+    &:hover{
+      transform: scale(1.03);
+    }
     &-text {
       font-weight: 700;
       font-size: 27px;
@@ -264,6 +286,14 @@ body{
     color: $second-color;
   }
 
+  &__item{
+    transition: all 300ms linear;
+  }
+
+  &__item:hover{
+    transform: scale(1.03);
+  }
+
   &__arrows {
     display: flex;
     gap: 15px;
@@ -319,6 +349,107 @@ body{
     }
   }
 }
+
+.price_services>.container {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 150px;
+}
+
+.price {
+
+
+		&__title {
+      @include style-h2();
+      margin-bottom: 75px;
+      color: $second-color;
+		}
+
+		&__list {
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+		}
+
+		&__item {
+      width: 526px;
+      background-color: $back-color;
+      transition: all 200ms linear;
+
+      &:hover{
+        transform: translate(-1.5%) scale(1.03);
+      }
+
+      &-link{
+      padding: 15.5px 15px 15.5px 30px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+			&-text {
+        @include style-h4();
+			}
+
+			&-arrow {
+        content: url(../img/vector/trainer_arrows_left.svg);
+			}
+		}
+}
+.services {
+
+		&__top {
+      @include flex-center();
+      margin-bottom: 105px;
+		}
+
+		&__title {
+      @include style-h2();
+      color: $second-color;
+		}
+
+		&__arrows {
+      display: flex;
+      gap: 15px;
+
+			&-item {
+        width: 45px;
+        height: 45px;
+        background-color: $back-color;
+        background-position: center;
+        background-repeat: no-repeat;
+			}
+
+      &-item:hover{
+        opacity: 0.8;
+        cursor: pointer;
+      }
+  
+      &-item:first-child{
+        background-image: url(../img/vector/trainer_arrows_left.svg);
+      }
+  
+      &-item:last-child{
+        background-image: url(../img/vector/trainer_arrows_right.svg);
+      }
+		}
+
+		&__content {
+      position: relative;
+
+			&-img {
+			}
+
+			&-title {
+        @include style-h3();
+        position: absolute;
+        z-index: 1;
+        left: 40px;
+        bottom: 30px;
+			}
+		}
+}
+
 
 .footer{
   background-color: #F7ECE1;
