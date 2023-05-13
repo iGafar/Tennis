@@ -1,10 +1,8 @@
-$primary-font: 14px;
 $second-font: 18px;
-$third-font: 36px;
-
 $primary-line-height: 140%;
 
 $second-color: #333;
+$third-color: #F7ECE1;
 $back-color: #8D86C9;
 
 @mixin flex-center {
@@ -13,17 +11,37 @@ $back-color: #8D86C9;
   align-items: center;
 }
 
-@mixin style-h2{
-  @include style-h2();
+@mixin p18sb {
+  font-weight: 600;
+  font-size: 18px;
+  line-height: $primary-line-height;
 }
 
-@mixin style-h3{
+@mixin p24b{
+  font-weight: 700;
+  font-size: 24px;
+  line-height: $primary-line-height;
+}
+
+h1{
+  font-weight: 700;
+  font-size: 48px;
+  line-height: $primary-line-height;
+}
+
+h2{
+  font-weight: 700;
+  font-size: 36px;
+  line-height: $primary-line-height;
+}
+
+h3{
   font-weight: 700;
   font-size: 27px;
   line-height: $primary-line-height;
 }
 
-@mixin style-h4{
+h4{
   font-weight: 600;
   font-size: 21px;
   line-height: $primary-line-height;
@@ -31,7 +49,7 @@ $back-color: #8D86C9;
 
 body{
   font-family: 'Gilroy', sans-serif;
-  font-size: $primary-font;
+  font-size: 14px;
   font-weight: 400;
   color: #E5E5E5;
 }
@@ -104,7 +122,7 @@ body{
     font-weight: 700;
     font-size: 48px;
     line-height: $primary-line-height;
-    max-width: 565px;
+    max-width: 600px;
     margin-bottom: 60px;
   }
 
@@ -198,7 +216,6 @@ body{
       transform: scale(1.03);
     }
     &-text {
-      @include style-h3();
       text-align: center;
       margin: -115px auto 0;
     }
@@ -227,7 +244,6 @@ body{
   }
 
   &__title {
-    @include style-h2();
     margin-bottom: 25px;
   }
 
@@ -237,7 +253,6 @@ body{
   }
 
   &__subtitle {
-    @include style-h4();
     margin-bottom: 25px;
   }
 
@@ -272,7 +287,6 @@ body{
   }
 
   &__title {
-    @include style-h2();
     color: $second-color;
   }
 
@@ -290,7 +304,6 @@ body{
     }
 
     &-title {
-      @include style-h4();
       margin: 0 auto 15px;
       max-width: min-content;
     }
@@ -345,7 +358,6 @@ body{
 
 
 		&__title {
-      @include style-h2();
       margin-bottom: 75px;
       color: $second-color;
 		}
@@ -372,10 +384,6 @@ body{
         justify-content: space-between;
       }
 
-			&-text {
-        @include style-h4();
-			}
-
 			&-arrow {
         content: url(../img/vector/trainer_arrows_left.svg);
 			}
@@ -389,7 +397,6 @@ body{
 		}
 
 		&__title {
-      @include style-h2();
       color: $second-color;
 		}
 
@@ -423,7 +430,6 @@ body{
       position: relative;
 
 			&-title {
-        @include style-h3();
         position: absolute;
         z-index: 1;
         left: 40px;
@@ -432,6 +438,62 @@ body{
 		}
 }
 
+
+
+.header-news{
+  text-align: center;
+  background: url(../img/news_header_back.jpg) no-repeat;
+  background-size: cover;
+  padding: 30px 0 60px;
+  position: static;
+  margin-bottom: 80px;
+}
+
+.news {
+  margin-bottom: 120px;
+
+  .container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-row-gap: 24px;
+    grid-column-gap: 24px;
+  }
+  
+  &__item {
+    padding: 30px 40px;
+    border: 1px solid $third-color;
+    display: flex;
+    flex-direction: column;
+
+    &-img {
+      margin-bottom: 25px;
+    }
+
+    &-date {
+      margin-bottom: 15px;
+      line-height: $primary-line-height;
+      opacity: 0.5;
+    }
+
+    &-text {
+      margin-bottom: 20px;
+      color: $second-color;
+    }
+
+    &-btn {
+      padding: 10px 20px;
+      @include p18sb();
+      background-color: $back-color;
+      max-width: 137px;
+      margin-top: auto;
+      transition: all 200ms linear;
+
+      &:hover {
+        opacity: 0.8;
+      }
+    }
+  }
+}
 
 .footer{
   background-color: #F7ECE1;

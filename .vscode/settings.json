@@ -1,0 +1,6 @@
+{
+    "ecsstractor_port.modifier_separator": "-",
+    "ecsstractor_port.brackets": true,
+    "ecsstractor_port.destination": "clipboard",
+    "ecsstractor_port.bem_nesting": true
+}
