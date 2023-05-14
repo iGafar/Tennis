@@ -352,12 +352,17 @@ body {
 }
 .services__content {
   position: relative;
+  padding: 30px 25px;
+  border: 1px solid #F7ECE1;
+  width: -moz-min-content;
+  width: min-content;
+  align-self: center;
 }
 .services__content-title {
   position: absolute;
   z-index: 1;
-  left: 40px;
-  bottom: 30px;
+  left: 65px;
+  bottom: 60px;
 }
 
 .header-news {
@@ -408,6 +413,112 @@ body {
 }
 .news__item-btn:hover {
   opacity: 0.8;
+}
+
+.header-club {
+  text-align: center;
+  background: url(../img/about_header_back.jpg) no-repeat;
+  background-size: cover;
+  padding: 30px 0 60px;
+  position: static;
+  margin-bottom: 80px;
+}
+
+.slider {
+  margin-bottom: 150px;
+}
+.slider__top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 105px;
+}
+.slider__title {
+  color: #333;
+}
+.slider__arrows {
+  display: flex;
+  gap: 15px;
+}
+.slider__arrows-item {
+  width: 45px;
+  height: 45px;
+  background-color: #8D86C9;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.slider__arrows-item:hover {
+  opacity: 0.8;
+  cursor: pointer;
+}
+.slider__arrows-item:first-child {
+  background-image: url(../img/vector/trainer_arrows_left.svg);
+}
+.slider__arrows-item:last-child {
+  background-image: url(../img/vector/trainer_arrows_right.svg);
+}
+.slider__content {
+  position: relative;
+  padding: 30px 25px;
+  border: 1px solid #F7ECE1;
+  width: -moz-min-content;
+  width: min-content;
+  align-self: center;
+}
+.slider__content-btn {
+  position: absolute;
+  z-index: 1;
+  left: 70px;
+  bottom: 65px;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 140%;
+  padding: 10px 20px;
+  background-color: #8D86C9;
+}
+.slider__content-btn:hover {
+  opacity: 0.9;
+}
+
+.club-about {
+  margin-bottom: 150px;
+}
+.club-about .container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.club-about__left {
+  margin-right: -86px;
+  z-index: 2;
+}
+.club-about__right {
+  padding: 70px 60px 84px 146px;
+  background-color: #F7ECE1;
+  max-width: 856px;
+  color: #333;
+}
+.club-about__title {
+  margin-bottom: 25px;
+}
+.club-about__text {
+  line-height: 140%;
+  margin-bottom: 35px;
+}
+.club-about__list {
+  display: flex;
+  gap: 20px;
+  padding-left: 30px;
+}
+.club-about__list-item {
+  display: flex;
+  align-items: center;
+  gap: 17px;
+}
+.club-about__list-item-text {
+  font-weight: 700;
+  line-height: 140%;
+  min-width: 132px;
 }
 
 .footer {

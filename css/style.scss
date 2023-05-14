@@ -428,12 +428,16 @@ body{
 
 		&__content {
       position: relative;
+      padding: 30px 25px;
+      border: 1px solid $third-color;
+      width: min-content;
+      align-self: center;
 
 			&-title {
         position: absolute;
         z-index: 1;
-        left: 40px;
-        bottom: 30px;
+        left: 65px;
+        bottom: 60px;
 			}
 		}
 }
@@ -491,6 +495,128 @@ body{
       &:hover {
         opacity: 0.8;
       }
+    }
+  }
+}
+
+.header-club{
+  text-align: center;
+  background: url(../img/about_header_back.jpg) no-repeat;
+  background-size: cover;
+  padding: 30px 0 60px;
+  position: static;
+  margin-bottom: 80px;
+}
+
+.slider {
+  margin-bottom: 150px;
+
+  &__top {
+    @include flex-center();
+    margin-bottom: 105px;
+  }
+
+  &__title {
+    color: $second-color;
+  }
+
+  &__arrows {
+    display: flex;
+    gap: 15px;
+
+    &-item {
+      width: 45px;
+      height: 45px;
+      background-color: $back-color;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+
+    &-item:hover{
+      opacity: 0.8;
+      cursor: pointer;
+    }
+
+    &-item:first-child{
+      background-image: url(../img/vector/trainer_arrows_left.svg);
+    }
+
+    &-item:last-child{
+      background-image: url(../img/vector/trainer_arrows_right.svg);
+    }
+  }
+
+  &__content {
+    position: relative;
+    padding: 30px 25px;
+    border: 1px solid $third-color;
+    width: min-content;
+    align-self: center;
+
+    &-btn {
+      position: absolute;
+      z-index: 1;
+      left: 70px;
+      bottom: 65px;
+      font-weight: 600;
+      font-size: $second-font;
+      line-height: $primary-line-height;
+      padding: 10px 20px;
+      background-color: $back-color;
+
+      &:hover{
+        opacity: 0.9;
+      }
+    }
+  }
+}
+
+.club-about {
+  margin-bottom: 150px;
+
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__left {
+    margin-right: -86px;
+    z-index: 2;
+  }
+
+  &__right {
+    padding: 70px 60px 84px 146px;
+    background-color: #F7ECE1;
+    max-width: 856px;
+    color: $second-color;
+  }
+
+  &__title {
+    margin-bottom: 25px;
+  }
+
+  &__text {
+    line-height: $primary-line-height;
+    margin-bottom: 35px;
+  }
+
+  &__list {
+    display: flex;
+    gap: 20px;
+    padding-left: 30px;
+
+    &-item {
+      display: flex;
+      align-items: center;
+      gap: 17px;
+
+      &-text{
+        font-weight: 700;
+        line-height: $primary-line-height;
+        min-width: 132px;
+      }
+      
     }
   }
 }
