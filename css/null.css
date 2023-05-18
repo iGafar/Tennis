@@ -32,7 +32,8 @@ color: inherit;}
 button::-moz-focus-inner {padding:0;border:0;}
 a, a:visited{
 	text-decoration: none;
-	color: inherit;}
+	color: inherit;
+	cursor: default;}
 a:hover{text-decoration: none;}
 ul li{list-style: none;}
 img{vertical-align: top;}
