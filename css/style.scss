@@ -337,6 +337,7 @@ body {
   &__list {
     display: flex;
     justify-content: space-between;
+    transition: 200ms all linear;
   }
 }
 
@@ -829,9 +830,6 @@ body {
   .trainer {
     max-width: 900px;
     margin: 0 auto 13.9vh;
-    &__item:nth-last-child(-n + 2) {
-      display: none;
-    }
   }
 
   .price_services {
@@ -878,7 +876,7 @@ body {
     }
 
     &__right {
-      padding: 70px 60px 84px;
+      padding: 70px 15px 40px;
       max-width: 780px;
     }
   }
@@ -1015,12 +1013,6 @@ body {
     }
   }
 
-  .trainer {
-    &__item:nth-last-child(-n + 3) {
-      display: none;
-    }
-  }
-
   .price {
     &__item:hover {
       transform: none;
@@ -1049,16 +1041,16 @@ body {
   .trainer {
     &__list {
       gap: 10px;
-      justify-content: center;
+      justify-content: flex-start;
+    }
+
+    &__item {
+      min-width: 50%;
     }
 
     &__item-img {
       max-width: 160px;
       padding: 0 5px;
-    }
-
-    &__item:nth-last-child(-n + 4) {
-      display: none;
     }
   }
 
@@ -1067,6 +1059,14 @@ body {
       padding: 20px 15px;
       &-img {
         max-width: 85vw;
+      }
+    }
+  }
+
+  .news {
+    &__item {
+      &-img {
+        width: 100%;
       }
     }
   }
