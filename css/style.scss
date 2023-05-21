@@ -287,12 +287,30 @@ body {
     color: $second-color;
   }
 
+  &__list {
+    display: flex;
+    justify-content: space-between;
+    transition: 200ms all linear;
+    width: 1229px;
+    overflow: hidden;
+    margin: 0 auto;
+    scroll-behavior: smooth;
+
+    .dragging {
+      scroll-behavior: auto;
+    }
+  }
+
   &__item {
-    max-width: 196px;
+    width: 196px;
     text-align: center;
     color: $second-color;
     line-height: $primary-line-height;
-    transition: all 300ms linear;
+    margin-left: 10px;
+
+    &:first-child {
+      margin-left: 0;
+    }
 
     &-img {
       border: 1px solid #f7ece1;
@@ -332,12 +350,6 @@ body {
     &-item:last-child {
       background-image: url(../img/vector/trainer_arrows_right.svg);
     }
-  }
-
-  &__list {
-    display: flex;
-    justify-content: space-between;
-    transition: 200ms all linear;
   }
 }
 
@@ -830,6 +842,10 @@ body {
   .trainer {
     max-width: 900px;
     margin: 0 auto 13.9vh;
+
+    &__list {
+      max-width: 818px;
+    }
   }
 
   .price_services {
@@ -880,14 +896,6 @@ body {
       max-width: 780px;
     }
   }
-
-  .trainer {
-    &__item {
-      &-img {
-        padding: 0 10px;
-      }
-    }
-  }
 }
 
 @media (max-width: 900px) {
@@ -898,6 +906,19 @@ body {
 
     &__list {
       display: none;
+    }
+  }
+
+  .trainer {
+    &__list {
+      width: 782px;
+    }
+
+    &__item {
+      width: 186px;
+      &-img {
+        padding: 0 10px;
+      }
     }
   }
 }
@@ -1013,6 +1034,12 @@ body {
     }
   }
 
+  .trainer {
+    &__list {
+      width: 584px;
+    }
+  }
+
   .price {
     &__item:hover {
       transform: none;
@@ -1030,7 +1057,7 @@ body {
   }
 }
 
-@media (max-width: 590px) {
+@media (max-width: 600px) {
   .advantages {
     &__item {
       &-img {
@@ -1040,22 +1067,12 @@ body {
   }
   .trainer {
     &__list {
-      gap: 10px;
-      justify-content: flex-start;
-    }
-
-    &__item {
-      min-width: 50%;
-    }
-
-    &__item-img {
-      max-width: 160px;
-      padding: 0 5px;
+      width: 386px;
     }
   }
 
   .services {
-    &__content{
+    &__content {
       padding: 20px 15px;
       &-img {
         max-width: 85vw;
@@ -1068,6 +1085,14 @@ body {
       &-img {
         width: 100%;
       }
+    }
+  }
+}
+
+@media (max-width: 400px) {
+  .trainer {
+    &__list {
+      width: 188px;
     }
   }
 }

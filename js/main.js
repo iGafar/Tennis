@@ -23,33 +23,75 @@ burger.addEventListener("click", () => {
   }
 });
 
-const arrowLeft = document.getElementsByClassName("trainer__arrows-item")[0];
-const arrowRight = document.getElementsByClassName("trainer__arrows-item")[1];
-const trainerList = document.getElementsByClassName("trainer__list")[0];
+const carusel = document.querySelector(".trainer__list"),
+  firstImg = document.querySelector(".trainer__item"),
+  arrowsItem = document.querySelectorAll(".trainer__arrows-item");
 
-const trainerItemWidth = document.getElementsByClassName("trainer__item")[0].clientWidth;
-const trainerListLength = document.getElementsByClassName("trainer__item").length;
-const translateLimit = -(trainerItemWidth * (trainerListLength - 2));
+let isDragStart = false,
+  isDragging = false,
+  prevPageX,
+  prevScrollLeft,
+  positionDiff;
 
-let trainerSliderPosition = 0;
-let value = 0;
-
-function swipe(direction) {
-  if (direction === "left") {
-    if (trainerSliderPosition === 0) return;
-    trainerSliderPosition += 1;
-  } else {
-    if (value === translateLimit) return;
-    trainerSliderPosition -= 1;
-  }
-  value = trainerSliderPosition * trainerItemWidth;
-  value = Math.round(value);
-
-  trainerList.style.transform = `translate(${value}px)`;
-}
-
-arrowLeft.onclick = () => {
-  swipe('left');
+const showHideItems = () => {
+  let scrollWidth = carusel.scrollWidth - carusel.clientWidth;
+  arrowsItem[0].style.opacity = carusel.scrollLeft == 0 ? ".8" : "1";
+  arrowsItem[1].style.opacity = carusel.scrollLeft == scrollWidth ? ".8" : "1";
 };
 
-arrowRight.onclick = () => {swipe("right")}
+arrowsItem.forEach((item) => {
+  let firstImgWidth = firstImg.offsetWidth + 10;
+  item.addEventListener("click", () => {
+    carusel.scrollLeft +=
+      item.id == "trainer-left" ? -firstImgWidth : firstImgWidth;
+    setTimeout(() => showHideItems(), 60);
+  });
+});
+
+const autoSlide = () => {
+  let firstImgWidth = firstImg.offsetWidth + 10;
+  if (carusel.scrollLeft == carusel.scrollWidth - carusel.clientWidth) return;
+  positionDiff = Math.abs(positionDiff);
+  let valDifference = firstImgWidth - positionDiff;
+  if (carusel.scrollLeft > prevScrollLeft) {
+    return (carusel.scrollLeft +=
+      positionDiff > firstImgWidth / 3 ? valDifference : -positionDiff);
+  }
+  carusel.scrollLeft -=
+    positionDiff > firstImgWidth / 3 ? valDifference : -positionDiff;
+};
+
+const dragStart = (e) => {
+  isDragStart = true;
+  prevPageX = e.pageX || e.touches[0].pageX;
+  prevScrollLeft = carusel.scrollLeft;
+};
+
+const dragging = (e) => {
+  if (!isDragStart) return;
+  e.preventDefault();
+  isDragging = true;
+  carusel.classList.add("dragging");
+  positionDiff = (e.pageX || e.touches[0].pageX) - prevPageX;
+  carusel.scrollLeft = prevScrollLeft - positionDiff;
+  showHideItems();
+};
+
+const dragStop = () => {
+  isDragStart = false;
+  carusel.classList.remove("dragging");
+
+  if (!isDragging) return;
+  isDragging = false;
+  autoSlide();
+};
+
+carusel.addEventListener("mousedown", dragStart);
+carusel.addEventListener("touchstart", dragStart);
+
+carusel.addEventListener("mousemove", dragging);
+carusel.addEventListener("touchmove", dragging);
+
+carusel.addEventListener("mouseup", dragStop);
+carusel.addEventListener("mouseleave", dragStop);
+carusel.addEventListener("touchend", dragStop);
