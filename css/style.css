@@ -64,6 +64,10 @@ body {
 }
 .header__inner .menu__list-item:hover {
   border-color: inherit;
+  cursor: pointer;
+}
+.header__inner .menu__list-link:hover {
+  cursor: pointer;
 }
 .header__burger {
   display: none;
@@ -77,6 +81,7 @@ body {
 }
 .header .social__item:hover {
   transform: scale(1.1);
+  cursor: pointer;
 }
 
 .main {
