@@ -284,6 +284,10 @@ body {
 .trainer {
   margin-bottom: 13.9vh;
 
+  &__swiper {
+    width: 100%;
+  }
+
   &__top {
     @include flex-center();
     margin-bottom: 7.13vh;
@@ -293,30 +297,11 @@ body {
     color: $second-color;
   }
 
-  &__list {
-    display: flex;
-    justify-content: space-between;
-    transition: 200ms all linear;
-    width: 1229px;
-    overflow: hidden;
-    margin: 0 auto;
-    scroll-behavior: smooth;
-
-    .dragging {
-      scroll-behavior: auto;
-    }
-  }
-
   &__item {
     width: 196px;
     text-align: center;
     color: $second-color;
     line-height: $primary-line-height;
-    margin-left: 10px;
-
-    &:first-child {
-      margin-left: 0;
-    }
 
     &-img {
       border: 1px solid #f7ece1;
@@ -360,9 +345,9 @@ body {
 }
 
 .price_services > .container {
+  margin-bottom: 13.9vh;
   display: flex;
   justify-content: space-between;
-  margin-bottom: 13.9vh;
 }
 
 .price {
@@ -398,7 +383,11 @@ body {
     }
   }
 }
+
 .services {
+  overflow: hidden;
+  width: 49%;
+
   &__top {
     @include flex-center();
     margin-bottom: 9.7vh;
@@ -435,11 +424,13 @@ body {
   }
 
   &__content {
-    position: relative;
     padding: 30px 25px;
     border: 1px solid $third-color;
-    width: min-content;
-    align-self: center;
+    width: fit-content;
+
+    &-img {
+      width: 100%;
+    }
 
     &-title {
       position: absolute;
@@ -846,20 +837,29 @@ body {
   }
 
   .trainer {
-    max-width: 900px;
     margin: 0 auto 13.9vh;
 
-    &__list {
-      max-width: 818px;
-    }
   }
 
   .price_services {
     .container {
+      flex-direction: column;
       text-align: center;
       align-items: center;
-      flex-direction: column;
       gap: 100px;
+    }
+
+    .price {
+      display: block;
+    }
+
+    .services {
+      display: block;
+      width: 80%;
+
+      &__content {
+        width: fit-content;
+      }
     }
   }
 
@@ -916,9 +916,6 @@ body {
   }
 
   .trainer {
-    &__list {
-      width: 782px;
-    }
 
     &__item {
       width: 186px;
@@ -1040,12 +1037,6 @@ body {
     }
   }
 
-  .trainer {
-    &__list {
-      width: 584px;
-    }
-  }
-
   .price {
     &__item:hover {
       transform: none;
@@ -1071,11 +1062,7 @@ body {
       }
     }
   }
-  .trainer {
-    &__list {
-      width: 386px;
-    }
-  }
+
 
   .services {
     &__content {
@@ -1095,10 +1082,3 @@ body {
   }
 }
 
-@media (max-width: 400px) {
-  .trainer {
-    &__list {
-      width: 188px;
-    }
-  }
-}
