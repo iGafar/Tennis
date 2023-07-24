@@ -101,7 +101,7 @@ body {
         cursor: pointer;
       }
 
-      &-link:hover{
+      &-link:hover {
         cursor: pointer;
       }
     }
@@ -838,7 +838,6 @@ body {
 
   .trainer {
     margin: 0 auto 13.9vh;
-
   }
 
   .price_services {
@@ -916,7 +915,6 @@ body {
   }
 
   .trainer {
-
     &__item {
       width: 186px;
       &-img {
@@ -965,6 +963,10 @@ body {
   }
 
   .header {
+    .logo {
+      margin: 0 auto;
+    }
+
     .menu__list {
       position: absolute;
       background-color: $back-color;
@@ -1043,6 +1045,15 @@ body {
     }
   }
 
+  .services {
+    &__content {
+      &-title {
+        left: 7%;
+        bottom: 15%;
+      }
+    }
+  }
+
   .news {
     .container {
       grid-template-columns: 1fr;
@@ -1063,7 +1074,6 @@ body {
     }
   }
 
-
   .services {
     &__content {
       padding: 20px 15px;
@@ -1081,4 +1091,3 @@ body {
     }
   }
 }
-

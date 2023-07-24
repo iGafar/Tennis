@@ -1,3 +1,28 @@
+const burger = document.querySelector(".header__burger");
+const firstLine = document.querySelectorAll(".header__burger-item")[0];
+const secondLine = document.querySelectorAll(".header__burger-item")[1];
+const thirdLine = document.querySelectorAll(".header__burger-item")[2];
+const menu = document.querySelector(".menu__list");
+const social = document.querySelector(".social");
+
+burger.addEventListener("click", () => {
+  if (menu.style.top === "0px") {
+    firstLine.style.transform = "rotate(0deg) translate(0px, 0px)";
+    secondLine.style.transform = "rotate(0deg) translate(0px, 0px)";
+    secondLine.style.opacity = "1";
+    thirdLine.style.transform = "rotate(0deg) translate(0px, 0px)";
+    menu.style.top = "-100vh";
+    social.style.left = "-100%";
+  } else {
+    firstLine.style.transform = "rotate(45deg) translate(5px, 9px)";
+    secondLine.style.transform = "translate(100px)";
+    secondLine.style.opacity = "0";
+    thirdLine.style.transform = "rotate(-45deg) translate(5px, -9px)";
+    menu.style.top = "0";
+    social.style.left = "10px";
+  }
+});
+
 const swiperTrainer = new Swiper('.trainer__swiper', {
   breakpoints: {
     400: {

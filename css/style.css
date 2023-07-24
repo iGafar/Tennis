@@ -758,6 +758,9 @@ body {
   h4 {
     font-size: 18px;
   }
+  .header .logo {
+    margin: 0 auto;
+  }
   .header .menu__list {
     position: absolute;
     background-color: #8d86c9;
@@ -821,6 +824,10 @@ body {
   }
   .price__item:hover {
     transform: none;
+  }
+  .services__content-title {
+    left: 7%;
+    bottom: 15%;
   }
   .news .container {
     grid-template-columns: 1fr;
