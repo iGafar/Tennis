@@ -56,5 +56,7 @@ const swiperServices = new Swiper('.services__swiper', {
   navigation: {
     prevEl: '#services-prev',
     nextEl: '#services-next',
-  }
+  },
+  speed: 500,
+  spaceBetween: 10,
 })
